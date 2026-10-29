@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechArb News</title>
+<meta name="description" content="What TechArb founders shipped this week, and the RSVP for Tuesday Night.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#" aria-label="TechArb home"><img src="assets/logo-blue.svg" alt="TechArb"></a>
+  <nav class="nav">
+    <a href="#news">News</a>
+    <a href="#tuesday">Tuesday Night</a>
+    <a href="#post" class="btn btn-sm">Post an update</a>
+  </nav>
+</header>
+
+<!-- ============ HERO / RSVP ============ -->
+<section class="hero" id="tuesday">
+  <div class="spine" aria-hidden="true"></div>
+  <div class="hero-in">
+    <div class="hero-copy">
+      <div class="eyebrow">You're invited</div>
+      <h1>TechArb<br><span class="light">Reignite.</span></h1>
+      <p class="lede">One night. One room. Everyone at Michigan who's building something.</p>
+
+      <dl class="when">
+        <div>
+          <dt>When</dt>
+          <dd id="ev-when"><span class="skeleton">Tuesday, Nov 3 · 8:00 PM</span></dd>
+          <dd class="sub">Laptops shut at 8. Free pizza.</dd>
+        </div>
+        <div>
+          <dt>Where</dt>
+          <dd id="ev-where"><span class="skeleton">Michigan League · Basement</span></dd>
+          <dd class="sub" id="ev-address">911 N. University Ave., Ann Arbor</dd>
+        </div>
+      </dl>
+
+      <div class="count" id="ev-count" aria-live="polite"></div>
+    </div>
+
+    <form class="card rsvp" id="rsvp-form" novalidate>
+      <div class="card-head">
+        <h2>RSVP for Tuesday Night</h2>
+        <p>No RSVP is required to show up. This just tells us how much pizza to order.</p>
+      </div>
+      <label>Name <input name="name" required maxlength="80" autocomplete="name"></label>
+      <label>Email <input name="email" type="email" required maxlength="120" autocomplete="email" placeholder="uniqname@umich.edu"></label>
+      <label><span>Startup or idea <span class="opt">optional</span></span><input name="startup" maxlength="80"></label>
+      <label><span>What are you shipping this week? <span class="opt">optional</span></span><input name="shipping" maxlength="200" placeholder="Launch landing page · 10 beta signups · fix onboarding"></label>
+      <label class="check"><input type="checkbox" name="pitching"> I want a 60-second slot in the Ship Showcase</label>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Count me in</button>
+      <p class="form-msg" id="rsvp-msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ NEWS FEED ============ -->
+<section class="news" id="news">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">TechArb News</div>
+        <h2>What got built <span class="light">this week.</span></h2>
+      </div>
+      <div class="filters" role="tablist" aria-label="Filter posts">
+        <button class="chip is-on" data-kind="all">All</button>
+        <button class="chip" data-kind="shipped">Shipped</button>
+        <button class="chip" data-kind="launched">Launched</button>
+        <button class="chip" data-kind="raised">Raised</button>
+        <button class="chip" data-kind="hiring">Hiring</button>
+        <button class="chip" data-kind="asking">Asking</button>
+        <button class="chip" data-kind="broke">What broke</button>
+      </div>
+    </div>
+    <div class="feed" id="feed" aria-live="polite"></div>
+    <div class="empty" id="feed-empty" hidden>
+      <p>Nothing here yet. Be the first to post what you shipped.</p>
+      <a class="btn btn-outline" href="#post">Post an update</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POST FORM ============ -->
+<section class="post" id="post">
+  <div class="wrap two">
+    <div>
+      <div class="eyebrow">Post your startup news</div>
+      <h2>Tell the room <span class="light">what you built.</span></h2>
+      <p class="lede">Write it like a founder update, not a press release. What shipped, what broke, what you need. Numbers beat adjectives.</p>
+      <ul class="rules">
+        <li><b>Shipped</b> means people can use it today.</li>
+        <li><b>Broke</b> is a valid category. The room learns more from it.</li>
+        <li><b>Asking</b> is how you get the check, the sponsor, or the engineer.</li>
+      </ul>
+    </div>
+    <form class="card" id="post-form" novalidate>
+      <label>Your name <input name="author" required maxlength="80" autocomplete="name"></label>
+      <label>Startup <input name="startup" required maxlength="80"></label>
+      <label>Kind of update
+        <select name="kind" required>
+          <option value="shipped">Shipped</option>
+          <option value="launched">Launched</option>
+          <option value="raised">Raised</option>
+          <option value="hiring">Hiring</option>
+          <option value="asking">Asking for help</option>
+          <option value="broke">What broke</option>
+        </select>
+      </label>
+      <label>Headline <input name="headline" required maxlength="120" placeholder="Fourteen paying customers. Six of them from the Wall."></label>
+      <label>What happened <textarea name="body" required maxlength="1200" rows="5" placeholder="What you built, for whom, and what you need next. Quote a user if you have one."></textarea></label>
+      <label><span>Link <span class="opt">optional</span></span><input name="link" type="url" maxlength="300" placeholder="https://"></label>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Post it</button>
+      <p class="form-msg" id="post-msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <img src="assets/logo-white.svg" alt="TechArb" class="foot-logo">
+    <div class="foot-copy">
+      <p>TechArb is a student-run entrepreneurs' library at the University of Michigan. Open to every U-M student with something in progress. No major required.</p>
+      <p class="fine">© 2026 Regents of the University of Michigan · Sponsored by <a href="https://www.pursuit.us/" rel="noopener">Pursuit</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="demo-banner" id="demo-banner" hidden>
+  Demo mode: Supabase isn't configured yet, so this page is showing sample data and won't save anything. Add your project URL and anon key to <code>config.js</code>.
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
