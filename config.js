@@ -1,9 +1,4 @@
-// TechArb News · Supabase config
-// 1. Create a project at https://supabase.com (free tier is plenty).
-// 2. Run supabase/schema.sql in the SQL editor.
-// 3. Project Settings → API: paste the Project URL and the anon (public) key below.
-// The anon key is safe to ship in the browser; row-level security in schema.sql limits what it can do.
 window.TECHARB_CONFIG = {
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: ""
+  SUPABASE_URL: "https://bhqmlvkvtbmwgzqnlpca.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJocW1sdmt2dGJtd2d6cW5scGNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMzMDIyNzgsImV4cCI6MjEwODg3ODI3OH0.KIoR-ZvbSePtD2bVfFsQrr96LA6HBBeVS_Y2ch2roiM"
 };
