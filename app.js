@@ -76,7 +76,8 @@
     const f = e.target, out = $("#rsvp-msg"), btn = f.querySelector("button");
     if (f.website.value) return; // honeypot
     const name = f.name.value.trim(), email = f.email.value.trim();
-    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return msg(out, "Name and a real email, please.", "err");
+    if (!name) return msg(out, "Please add your name.", "err");
+    if (!/^[^@\s]+@([a-z0-9-]+\.)*umich\.edu$/i.test(email)) return msg(out, "Please use your @umich.edu email address.", "err");
     btn.disabled = true; msg(out, "Saving…");
     const row = {
       event_id: currentEvent.id, name, email,

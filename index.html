@@ -53,7 +53,7 @@
         <p>No RSVP is required to show up. This just tells us how much pizza to order.</p>
       </div>
       <label>Name <input name="name" required maxlength="80" autocomplete="name"></label>
-      <label>Email <input name="email" type="email" required maxlength="120" autocomplete="email" placeholder="uniqname@umich.edu"></label>
+      <label>Email <input name="email" type="email" required maxlength="120" autocomplete="email" pattern="[^@\s]+@([A-Za-z0-9\-]+\.)*[Uu][Mm][Ii][Cc][Hh]\.[Ee][Dd][Uu]" title="Use your @umich.edu email address" placeholder="uniqname@umich.edu"></label>
       <label><span>Startup or idea <span class="opt">optional</span></span><input name="startup" maxlength="80"></label>
       <label><span>What are you shipping this week? <span class="opt">optional</span></span><input name="shipping" maxlength="200" placeholder="Launch landing page · 10 beta signups · fix onboarding"></label>
       <label class="check"><input type="checkbox" name="pitching"> I want a 60-second slot in the Ship Showcase</label>
